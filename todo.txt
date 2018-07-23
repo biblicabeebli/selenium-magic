@@ -1,0 +1,79 @@
+Selenium test things to build
+
+Scrollclick
+Scrollclick debugging logging
+Linear scrollclick?
+
+Nose and django testrunner integration
+
+PDB
+Pdb/ipdb integration for the pause on error code.
+Is it possible to force width of terminal window to fix weird printout issues?
+Printout namespace?
+Disable pdb if running in parallel?
+Can we make control-D exit pdb and test?
+Inject some helper variables when dropping into the the pdb:
+The error object
+A variable named TEST, T
+- Print stacktrace coloriized
+- handle to the error in case user overwrites it
+- retry test - reruns teeth test that just crashed, reloads code? Is that even possible?
+- restart tests - exits and restarts the test suite? get copyable command to run this test.
+- restart test class
+TEST_CLASS, TC the _instance_ of the test class, self
+- reload and rerun all tests in class
+- has access to all helper functions on the class object
+SELENIUM, S - literally the selenium handle to do arbitrary selenium commands
+SELENIUM_HELPERS, SH
+- handle to all the selenium helper commands but you magically don't have to include "self" because they are not class methods of your testcase!
+Need to overwrite exit() to intelligently close selenium.
+
+
+Fixture loading failure detection and avoidance.
+
+Colored logging
+Make the logging print the name of the test it is in by looking at the stack
+
+Automatic finding of chromedriver (and firefox driver.
+
+Handle the weird parallelization options.
+
+Standalone capability (django not a requirement)
+
+Flask support
+
+Helpers to execute javascript from a file instead of inline javascript.  Hook into static files maybe?
+
+Is it possible to detect terminal window width to improve the test library screwing with printouts?
+
+repeat tests at multiple resolutions
+(is it possible to run those in parallel?
+Run test at a particular resolution - undoes this at the end of test.
+Hook to resize browser window - undoes this at the end of test.
+
+Headless operation
+Automatic window sizing
+
+Global settings.
+Force_settings decorator for making settings specific to one test.
+Hook to adjust settings mid-test but revert at end of test?
+
+Cookies...
+Make cookies clear at the end of each test? If not clear by default make a run_in_incognito decorator? Might be easiest to just restart the chromedriver for this
+Decorator to set cookies for the duration of a test.
+Cookie extraction assistant - make it really easy to extract cookies form the runtime of a test.
+CSRF django integration???
+
+Wrapper with intelligent retry:
+-exponential backoff?
+-smart logging
+-is it possible to do a with statement? Probably not, scope is exited, same as pdb issues...
+
+
+Wrapper to open N different browsers controled by selenium.
+
+Check for updates to version of chromedriver, chrome (and other browsers)
+
+Force user to configure a webdriver resolution, refuse to launch without.
+
+Monkeypatch selenium functions that are fragile with a warning statement about why the function is bad and should be replaced with X and file and line number of the call.
