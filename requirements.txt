@@ -1,4 +1,5 @@
 ipython
 django
 coloredlogs
+colored_traceback
 selenium

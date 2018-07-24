@@ -1,5 +1,5 @@
 """
-WSGI config for selenium_magic_test_django_project project.
+WSGI config for test_django_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "selenium_magic_test_django_project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "test_django_project.settings")
 
 application = get_wsgi_application()
